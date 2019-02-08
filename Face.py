@@ -13,7 +13,7 @@ known_face_names =[]
 
 for file in os.listdir(employee_pictures):
     employee, extension = file.split(".")
-    img = face_recognition.load_image_file('C:/Users/engel/Downloads//employee/%s.png' % (employee))
+    img = face_recognition.load_image_file(employee_pictures+"/"+file)
     face_location = face_recognition.face_locations(img ,number_of_times_to_upsample=0)
     img_encoding = face_recognition.face_encodings(img)[0]
     known_face_encodings.append(img_encoding)
@@ -43,7 +43,7 @@ while(True):
     face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
     for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
         # See if the face is a match for the known face(s)
-        matches = face_recognition.compare_faces(known_face_encodings, face_encoding,0.45)
+        matches = face_recognition.compare_faces(known_face_encodings, face_encoding,0.6)
 
         name = "Unknown"
 
