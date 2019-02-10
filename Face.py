@@ -1,8 +1,6 @@
-import numpy as np
 import face_recognition
 import cv2 as cv2 #OpenCV
 facecascade = cv2.CascadeClassifier('C:/Users/engel/Downloads/haarcascade_frontalface_default.xml')
-import json
 import os
 
 #put your employee pictures in this path as name_of_employee.jpg
